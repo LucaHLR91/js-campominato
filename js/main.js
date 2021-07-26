@@ -9,14 +9,19 @@
 
 //  GENERAZIONE NUMERI CASUALI TRA 1 E 100
 var numbersArray = [];
-for (var i = 0; i < 16; i++) {
-    numbersArray.push(rndNumber(1, 100));
+var arrayLength = 16;
+var i = 0;
+do {
+    var number = rndNumber(1, 20);
+    if (isInArray(numbersArray, number) == false) {
+        numbersArray.push(number);
+        i++
+    }
+}while (numbersArray.length != arrayLength);
 
-    
-}
 console.log(numbersArray);
 
-
+// numbersArray.push(rndNumber(1, 100));
 
 
 
@@ -26,4 +31,17 @@ console.log(numbersArray);
 function rndNumber(min, max) {
     var rndNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return rndNumber;
+}
+
+function isInArray(array, element) {
+    var result = false;
+    var i = 0;
+
+    while (i < array.length && result == false) {
+        if (element == array[i]) {
+            result = true;
+        }
+        i++
+    }
+    return result;
 }
