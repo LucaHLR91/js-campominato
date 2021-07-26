@@ -56,14 +56,14 @@ do {
          alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
     } else if (isInArray(numbersRndArray, user_numbers) == true) {
         alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
-        alert('Il tuo punteggio è:' + ' ' + user_array.length);
-        console.log('Il tuo punteggio è:' + ' ' + user_array.length)   
+        alert('Il tuo punteggio è:' + ' ' + user_array.length);   
     }else {
         user_array.push(user_numbers);
     }
 } while (user_array.length != user_array_lenght && isInArray(numbersRndArray, user_numbers) == false)
 
 console.log(user_array);
+console.log('Il tuo punteggio è:' + ' ' + user_array.length)
 
 // FUNZIONI
 function rndNumber(min, max) {
