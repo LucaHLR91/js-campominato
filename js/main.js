@@ -7,6 +7,8 @@
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
+alert('Benvenuto nel Campo Minato: il gioco sta per cominciare. Buona Fortuna!')
+
 //  GENERAZIONE NUMERI CASUALI TRA 1 E 100
 var numbersRndArray = [];
 var arrayLength = 16;
@@ -21,9 +23,26 @@ do {
 
 console.log(numbersRndArray);
 
+// CHIEDERE ALL'UTENTE 100-16 NUMERI DA 1 A 100 E VERIFICO LA PRESENZA NELL'ARRAY BOMBA
 
+var level = 100;
+var user_array = [];
+var user_array_lenght = level - 16;
 
+do {
+    var user_numbers = parseInt(prompt('inserisci un numero da 1 a 100'));
+     if (isInArray(user_array, user_numbers) == true) {
+         alert('attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
+    } else if (isInArray(numbersRndArray, user_numbers) == true) {
+        alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
+        alert('il tuo punteggio è:' + ' ' + user_array.length);
+        console.log('il tuo punteggio è:' + ' ' + user_array.length)   
+    }else {
+        user_array.push(user_numbers);
+    }
+} while (user_array.length != user_array_lenght && isInArray(numbersRndArray, user_numbers) == false)
 
+console.log(user_array);
 
 
 // FUNZIONI
