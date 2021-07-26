@@ -7,7 +7,6 @@
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
-// BONUS
 // BONUS: (da fare solo se funziona tutto il resto)
 // all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
 // con difficoltà 0 => tra 1 e 100
@@ -48,8 +47,6 @@ do {
 console.log(numbersRndArray);
 
 // CHIEDERE ALL'UTENTE 100-16 NUMERI DA 1 A 100 E VERIFICO LA PRESENZA NELL'ARRAY BOMBA
-
-
 var user_array = [];
 var user_array_lenght = level - 16;
 
@@ -68,9 +65,7 @@ do {
 
 console.log(user_array);
 
-
 // FUNZIONI
-
 function rndNumber(min, max) {
     var rndNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return rndNumber;
