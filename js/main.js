@@ -8,9 +8,15 @@
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
 //  GENERAZIONE NUMERI CASUALI TRA 1 E 100
+console.log(rndNumber(1, 100));
+
 
 
 
 
 // FUNZIONI
 
+function rndNumber(min, max) {
+    var rndNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return rndNumber;
+}
