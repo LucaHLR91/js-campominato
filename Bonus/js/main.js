@@ -16,20 +16,20 @@
 
 // SELEZIONARE IL LIVELLO DI GIOCO
 alert('Benvenuto nel Campo Minato: il gioco sta per cominciare. Buona Fortuna!')
-var select_level = parseInt(prompt('scegli il livello del gioco da 0 a 2'));
+var select_level = parseInt(prompt('Scegli il livello del gioco da 0 a 2'));
 var level
 switch (select_level) {
     case 0 :
         var level = 100;
-        alert('hai selezionato il livello 0: puoi scegliere numeri da 1 a 100');
+        alert('Hai selezionato il livello 0: puoi scegliere numeri da 1 a 100');
         break;
     case 1 :
         var level = 80;
-        alert('hai selezionato il livello 1: puoi scegliere numeri da 1 a 80');
+        alert('Hai selezionato il livello 1: puoi scegliere numeri da 1 a 80');
         break;
     case 2 :
         var level = 50;
-        alert('hai selezionato il livello 2: puoi scegliere numeri da 1 a 50');
+        alert('Hai selezionato il livello 2: puoi scegliere numeri da 1 a 50');
         break;
 }
 
@@ -56,11 +56,11 @@ var user_array_lenght = level - 16;
 do {
     var user_numbers = parseInt(prompt('inserisci un numero'));
      if (isInArray(user_array, user_numbers) == true) {
-         alert('attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
+         alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
     } else if (isInArray(numbersRndArray, user_numbers) == true) {
         alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
-        alert('il tuo punteggio è:' + ' ' + user_array.length);
-        console.log('il tuo punteggio è:' + ' ' + user_array.length)   
+        alert('Il tuo punteggio è:' + ' ' + user_array.length);
+        console.log('Il tuo punteggio è:' + ' ' + user_array.length)   
     }else {
         user_array.push(user_numbers);
     }
