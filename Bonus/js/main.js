@@ -30,6 +30,8 @@ switch (select_level) {
         var level = 50;
         alert('Hai selezionato il livello 2: puoi scegliere numeri da 1 a 50');
         break;
+    default :
+        alert('Attenzione hai selezionato un livello inesistente');
 }
 
 //  GENERAZIONE NUMERI CASUALI TRA 1 E 100
