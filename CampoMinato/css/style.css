@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+
+.clearfix::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+/* BODY */
+
+#campo {
+    width: 40vw;
+    height: 40vw;
+    margin: 0 auto;
+    background-color: green;   
+}
+
+.quadrato {
+    width: calc(40vw / 10);
+    height: calc(40vw / 10);
+    float: left;
+}
+
+.cella {
+    width: 100%;
+    height: 100%;
+    border:  1px solid black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}

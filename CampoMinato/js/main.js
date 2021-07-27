@@ -50,27 +50,67 @@ console.log(numbersRndArray);
 var user_array = [];
 var user_array_lenght = level - 16;
 
-do {
-    var user_numbers = parseInt(prompt('inserisci un numero'));
-     if (isInArray(user_array, user_numbers) == true) {
-         alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
-    } else if (isInArray(numbersRndArray, user_numbers) == true) {
-        alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
-        alert('Il tuo punteggio è:' + ' ' + user_array.length);   
-    }else {
-        user_array.push(user_numbers);
-    }
-} while (user_array.length != user_array_lenght && isInArray(numbersRndArray, user_numbers) == false)
+// PRIMA OPZIONE
+document.getElementById('campo').addEventListener('click',
+    function(e) {     //e = event
+        var cella = e.target.dataset.cella;
+        console.log(cella);
+        let element = document.querySelectorAll("[data-cella='" + cella + "']");
+        console.log(element[0]);
 
+        if (isInArray(user_array, cella) == true) {
+            alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
+        } else if (isInArray(numbersRndArray, cella) == true) {
+            element[0].classList.add("red");
+            alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
+            alert('Il tuo punteggio è:' + ' ' + user_array.length);   
+        }else {
+            element[0].classList.add("blue");
+            user_array.push(cella);
+        }
+
+        
+                
+    }
+         
+)
+ // SECONDA OPZIONE 
+// do {
+//     document.getElementById('campo').addEventListener('click',
+//         function(e) {     //e = event
+//             console.log(e.target.dataset.cella);
+//             let element = document.querySelectorAll("[data-cella='" + e.target.dataset.cella + "']");
+//             console.log(element[0]);
+
+//             if (isInArray(user_array, element) == true) {
+//                 alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
+//             } else if (isInArray(numbersRndArray, element) == true) {
+//                 element[0].classList.add("red");
+//                 alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
+//                 alert('Il tuo punteggio è:' + ' ' + user_array.length);   
+//             }else {
+//                 element[0].classList.add("blue");
+//                 user_array.push(element);
+//             }
+                
+            
+//         }
+         
+//     )
+
+// }while (user_array.length != user_array_lenght && isInArray(numbersRndArray, element) == false)
+
+creaCampo(level);
 console.log(user_array);
-console.log('Il tuo punteggio è:' + ' ' + user_array.length)
+console.log('Il tuo punteggio è:' + ' ' + user_array.length);
 
 // FUNZIONI
+// CREO NUMERO RANDOM PC
 function rndNumber(min, max) {
     var rndNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return rndNumber;
 }
-
+// VERIFICO SE IL NUMERO SCELTO DALL'UTENTE NON SIA RIPETUTO
 function isInArray(array, element) {
     var result = false;
     var i = 0;
@@ -82,4 +122,17 @@ function isInArray(array, element) {
         i++
     }
     return result;
+}
+// CREO IL CAMPO DA GIOCO
+function creaCampo (celle) {
+    for (let i = 1; i <= celle; i++) {
+        let cella = `
+            <div data-cella="${i}" class="cella"></div>
+        `;
+
+        let templateCella = document.createElement('div');
+        templateCella.classList.add('quadrato');
+        templateCella.innerHTML = cella;
+        document.getElementById('campo').appendChild(templateCella);
+    }
 }
