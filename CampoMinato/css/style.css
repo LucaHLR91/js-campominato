@@ -5,6 +5,9 @@
 }
 
 /* COMMON */
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 .clearfix::after {
     display: table;
@@ -12,7 +15,22 @@
     clear: both;
 }
 
-/* BODY */
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+header h1 {
+    text-transform: uppercase;
+
+
+}
+
+/* MAIN */
 
 #campo {
     width: 40vw;
