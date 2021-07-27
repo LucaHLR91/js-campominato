@@ -60,6 +60,7 @@ function cellClick(e) {     //e = event
         alert('Attenzione: hai inserito lo stesso numero due volte! prendi un pezzo di carta ;)')
     } else if (isInArray(numbersRndArray, cella) == true) {
         element[0].classList.add("red");
+        
         document.getElementById('campo').removeEventListener('click', cellClick)
         alert('Hai fatto scoppiare una bomba!! Hai perso!!!');
         alert('Il tuo punteggio è:' + ' ' + user_array.length);   
